@@ -1,7 +1,15 @@
 关于打包报错的一些问题
-1、在webpack.config.js中的HtmlWebpackPlugin中未添加以哪个模板
+1、在webpack.config.dev.js中的HtmlWebpackPlugin中未添加以哪个模板
    为基准生成一个打包后的新的html文件
 2、逐个检查一遍文件，在src/main.js中发现ReactDom.render中的div格式很
    奇怪，语法提示已经有报错了，修改之，保存后又回原样了，是安装的插件
 	 导致的，关闭JS-HTML-CSS Formatter插件之后再保存不再格式化，解决
 3、重新执行打包命令，npm run dev解决问题
+
+//devserve使用
+1、安装包npm i -D webpack-dev-serve
+2、在package.json中的script标签中添加dev:"webpack-dev-server"
+3、运行npm run dev即可启动
+4、注意的一个问题，当保存之后会自动重新编译，然后替换资源从而在浏览器中
+   重新加载新的保存后的代码，这个在配置文件中是可以进行定制的
+5、和module平级的地方添加devServer，然后添加配置参数

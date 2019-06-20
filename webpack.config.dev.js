@@ -29,5 +29,9 @@ module.exports = {
         }
       }]
     }]
-  }
+	},
+	devServer: {
+		open: true,  //运行npm run dev命令后会自动在浏览器中打开
+		port: 9000
+	}
 }
