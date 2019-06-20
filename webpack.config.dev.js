@@ -20,15 +20,21 @@ module.exports = {
   module: {
     //匹配规则，寻找js文件，并使用use使用对应的loader来解析此js文件
     //具体是babel-loader以及对应的库babel-core
-    rules: [{
-      test: /\.js$/,
-      use: [{
-        loader: "babel-loader",
-        options: {
-          presets: ["react"]
-        }
-      }]
-    }]
+    rules: [
+			{
+				test: /\.js$/,
+				use: [{
+					loader: "babel-loader",
+					options: {
+						presets: ["react"]
+					}
+				}]
+			},
+			{
+				test: /\.css$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
+				use: ["style-loader","css-loader"]
+			}
+	]
 	},
 	devServer: {
 		open: true,  //运行npm run dev命令后会自动在浏览器中打开
