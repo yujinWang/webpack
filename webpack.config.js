@@ -11,7 +11,11 @@ module.exports = {
   },
   mode: "development", //webpack4以上的版本需要配置此对象
   plugins: [
-    new HtmlWebpackPlugin()
+		new HtmlWebpackPlugin({  //以template为模板生成一个新的html文件
+				filename: "index.html",
+				template: "src/index.html"
+			}
+		)
   ],
   module: {
     //匹配规则，寻找js文件，并使用use使用对应的loader来解析此js文件
