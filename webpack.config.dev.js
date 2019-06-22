@@ -35,8 +35,14 @@ module.exports = {
 				use: ["style-loader","css-loader"]
 			},
 			{
-				test: /\.jpg$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
-				use: ["file-loader"]
+				test: /\.(jpg|png|gif|jpeg)$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
+				// use: ["url-loader"]  //limit单位是kbe
+				use: [{
+					loader: "url-loader",
+					options: {
+						limit: 10000
+					}
+				}]
 			}
 	]
 	},
