@@ -30,3 +30,5 @@
    使用localhost:9000/+图片地址即可访问
 
 //在html文件中引入图片资源
+1、在main.js文件中需要将图片作为一个模块引入
+2、然后在html中使用变量的形式引入 <img src={bgPicture} />
