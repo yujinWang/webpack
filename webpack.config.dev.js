@@ -33,6 +33,10 @@ module.exports = {
 			{
 				test: /\.css$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
 				use: ["style-loader","css-loader"]
+			},
+			{
+				test: /\.jpg$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
+				use: ["file-loader"]
 			}
 	]
 	},
