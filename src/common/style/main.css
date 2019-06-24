@@ -2,3 +2,18 @@ body {
 	/* background: url("../images/bg.jpg") no-repeat; */
 	background-size: 100%; /*背景图片撑满全屏*/
 }
+/* 引入自定义字体库文件 */
+@font-face {
+	font-family: "myFont";
+	src: url("../fonts/fontawesome-webfont.ttf")
+}
+/* 然后使用对应字体库文件中的类名 */
+.rocket {
+	font-family: "myFont";
+	font-size: 50px;
+}
+/* 使用伪类before来规定使用的字体 */
+/* 然后在main.js的html文件中使用此类名即可 */
+.rocket::before {
+	content: "\f135";
+}

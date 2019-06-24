@@ -12,12 +12,7 @@ const bgPicture2 = require("./common/images/bg2.jpg");
 //或者在html中直接使用require语法
 
 //render函数接受两个参数，第一个是要添加的元素，第二个是要添加到的那个dom节点
-ReactDom.render(   
-	<div> React Test12 
-		<img src={bgPicture} />
-		<img src={bgPicture1} />
-		<img src={bgPicture2} />
-		<img src={require("./common/images/bg1.png")} />
-	</div>,
+ReactDom.render( 
+	<div className="rocket">自定义字体rocket测试</div>,
   document.getElementById("root")
 )

@@ -43,11 +43,15 @@ module.exports = {
 						limit: 10000
 					}
 				}]
+			},
+			{
+				test: /\.(ttf|eot|woff|woff2|svg|otf)$/,
+				use: ["file-loader"]
 			}
 	]
 	},
 	devServer: {
-		open: true,  //运行npm run dev命令后会自动在浏览器中打开
+		open: false,  //运行npm run dev命令后会自动在浏览器中打开为true时
 		port: 9000
 	}
 }
