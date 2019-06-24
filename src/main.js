@@ -10,9 +10,17 @@ import bgPicture1 from "./common/images/bg1.png";
 //或者使用require语法也可以
 const bgPicture2 = require("./common/images/bg2.jpg");
 //或者在html中直接使用require语法
+//外部字体库文件的使用font-awesome
+import "font-awesome/css/font-awesome.css";
 
 //render函数接受两个参数，第一个是要添加的元素，第二个是要添加到的那个dom节点
-ReactDom.render( 
-	<div className="rocket">自定义字体rocket测试</div>,
+//貌似里面只能有最外层一个div，不能出现与之并列的div，里面再嵌套是不受影响的
+ReactDom.render(
+	// <div className="rocket">自定义字体rocket测试</div>,
+	<div>
+		<i class="fa fa-rocket" aria-hidden="true">火箭</i>
+		<br />
+		<div class="fa fa-rocket">div中嵌套div测试</div>
+	</div>,
   document.getElementById("root")
 )
