@@ -39,7 +39,20 @@ module.exports = {
 							modules: true
 						}
 					}
-			  ]
+				],
+				// 这样写的结果就是没有规则来匹配css-loader了，暂时解决方法是再写一套规则
+				exclude: [
+					path.resolve(__dirname,"node_modules"),
+					path.resolve(__dirname,"src/common")
+				]
+			},
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"],
+				include: [
+					path.resolve(__dirname, "node_modules"),
+					path.resolve(__dirname, "src/common")
+				]
 			},
 			{
 				test: /\.(jpg|png|gif|jpeg)$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
