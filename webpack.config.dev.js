@@ -32,7 +32,14 @@ module.exports = {
 			},
 			{
 				test: /\.css$/, //这里无需再做多的配置，直接use: ["css-loader"]即可
-				use: ["style-loader","css-loader"]
+				use: ["style-loader",
+					{
+						loader: "css-loader",
+						options: {  //css模块化，true表示开启模块化，在此之前如果单纯设置为true的话module-test样式是不生效的
+							modules: true
+						}
+					}
+			  ]
 			},
 			{
 				test: /\.(jpg|png|gif|jpeg)$/, //这里无需再做多的配置，直接use: ["css-loader"]即可

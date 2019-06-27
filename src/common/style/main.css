@@ -1,6 +1,10 @@
 body {
 	/* background: url("../images/bg.jpg") no-repeat; */
+	background: pink;
 	background-size: 100%; /*背景图片撑满全屏*/
+}
+body .module-test {
+	background: green;
 }
 /* 引入自定义字体库文件 */
 @font-face {
