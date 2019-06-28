@@ -60,3 +60,10 @@
 3、再写一套样式存在一个问题，由于wenpack解析loader是从后往前的，所以经过下面的css-loader
    解析之后当再匹配上面的css-loader之后就会报错，所以下面的那一条还需要加一个条件，当包括
 	 上面的排除项node_modules和common目录时候才解析
+
+//使用scss
+1、安装依赖包 npm i -D sass-loader node-sass,不仅仅是安装sass-loader就行，还需要安装node-sass-loader
+2、安装遇到的一点问题 使用npm 安装时候报错无法安装，采用cnpm进行安装
+3、然后再书写匹配规则，数组中的选项是从后往前解析的，所以从后往前写法为sass-loader,css-loader,
+   style-loader,这里需注意书写顺序
+4、less使用方式同scss
