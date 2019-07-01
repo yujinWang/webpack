@@ -1,0 +1,12 @@
+babel用来解析es6语法使之变成可以被浏览器执行的语法
+空文件夹
+npm init
+安装babel-cli npm i -D babel-cli
+执行 babel src/app.js 这样编译是不通过的，不过可以使用
+     ./node_modules/.bin/babel src/app.js 来实现
+但是这样的结果是输出了，但是并未编译且输入这一大段路径显得很繁琐
+如何去优化呢？
+在package.json中的script中添加如下代码，aaa名称任意，后跟babel，表示执行babel命令，
+然后跟要处理的文件，不过一般会写成babel的属性
+"aaa": "babel src/app.js"
+但是由于babel命令很强大，所以执行此命令，它并不会做出自动编译操作，而是原样输出里面内容
